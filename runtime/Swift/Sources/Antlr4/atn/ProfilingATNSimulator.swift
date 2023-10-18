@@ -11,6 +11,10 @@
 
 import Foundation
 
+#if os(Linux)
+	import let CDispatch.NSEC_PER_SEC
+#endif
+
 public class ProfilingATNSimulator: ParserATNSimulator {
     private(set) var decisions: [DecisionInfo]
     internal var numDecisions: Int = 0
